@@ -1,0 +1,97 @@
+# Use the default sshd_config file included from the distribution.
+
+Include /etc/ssh/sshd_config.d/\*.conf
+
+# Specify the SSH protocol version 2
+
+Protocol 2
+
+# Set the SSH port to a non-standard port for reduced exposure to automated attacks
+
+Port XXXXXX
+
+# Reduce the time a connection is allowed to stay open before authentication succeeds
+
+LoginGraceTime 30s
+
+# Do not allow password authentication to ensure keys are required
+
+PasswordAuthentication no
+
+# Disable root login over SSH for security reasons
+
+PermitRootLogin no
+
+# Limit the number of authentication attempts to prevent brute force attacks
+
+MaxAuthTries 2
+
+# Set a limit on the number of concurrent unauthenticated connections
+
+MaxStartups 10:30:60
+
+# Allow a limited number of sessions to prevent resource exhaustion
+
+MaxSessions 2
+
+# Enable public key authentication
+
+PubkeyAuthentication yes
+
+# Disable less secure authentication methods
+
+ChallengeResponseAuthentication no
+KbdInteractiveAuthentication no
+
+# PAM
+
+UsePAM yes
+
+# Users whitelist
+
+AllowUsers USER1 USER2 USER3
+
+# Set auth method
+
+AuthenticationMethods publickey
+
+# Disable X11 forwarding unless absolutely necessary, to prevent X11 attacks
+
+X11Forwarding no
+
+# Do not print the message of the day on login
+
+PrintMotd no
+
+# Specify environment variables accepted from the client
+
+AcceptEnv LANG LC\_\*
+
+# Configure the subsystem for secure file transfer
+
+Subsystem sftp /usr/lib/openssh/sftp-server
+
+# Use stronger cryptography for host keys
+
+HostKey /etc/ssh/ssh_host_ed25519_key
+
+# Logging options to help diagnose issues and record attempts for security auditing
+
+LogLevel INFO
+SyslogFacility AUTH
+
+# Specify key re-exchange parameters to ensure forward secrecy
+
+KexAlgorithms curve25519-sha256@libssh.org
+Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com
+MACs hmac-sha2-512-etm@openssh.com
+
+# Disable empty passwords just in case
+
+PermitEmptyPasswords no
+
+# Use strong HostBasedAuthentication settings if needed (usually disabled for most setups)
+
+HostbasedAuthentication no
+IgnoreUserKnownHosts yes
+IgnoreRhosts yes
