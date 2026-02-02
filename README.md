@@ -1,74 +1,42 @@
-# Project Title
+# Dotfiles
 
-Short description of your project. Explain what it does and why it exists.
+Collection of personal dotfiles to configure ZSH with Starship and an example of SSH configuration file `sshd_config`. Intended as a public reference and a reusable base.
 
-<!-- Optional badges (replace with your repo/image names) -->
+## Contents
 
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/OWNER/REPO?style=flat-square&logo=github&color=blue)
-![GitHub last commit](https://img.shields.io/github/last-commit/OWNER/REPO?style=flat-square)
-![GitHub stars](https://img.shields.io/github/stars/OWNER/REPO?style=flat-square)
-![GitHub issues](https://img.shields.io/github/issues/OWNER/REPO?style=flat-square)
-![GitHub License](https://img.shields.io/github/license/OWNER/REPO?style=flat-square)
+- Zsh (Linux): [zsh/linux.zshrc](zsh/linux.zshrc)
+- Zsh (macOS): [zsh/macos.zshrc](zsh/macos.zshrc)
+- SSH daemon (example): [ssh/sshd_conf](ssh/sshd_conf)
 
-<!-- Docker badges (optional) -->
+## What’s included
 
-![Docker Image Version](https://img.shields.io/docker/v/DOCKER_USER/IMAGE?sort=semver&style=flat-square&logo=docker)
-![Docker Pulls](https://img.shields.io/docker/pulls/DOCKER_USER/IMAGE?style=flat-square&logo=docker)
-![Docker Image Size](https://img.shields.io/docker/image-size/DOCKER_USER/IMAGE/latest?style=flat-square&logo=docker)
+### Zsh
 
-## Features
+- History and completion setup.
+- Autocomplete (Completions).
+- Menu styles.
+- Plugins: `zsh-autosuggestions` and `zsh-syntax-highlighting`.
+- Keyboard shortcuts.
+- Modern tools: `zoxide`, `eza`, `lazygit`.
+- Git functions and aliases.
+- Common aliases and functions I use.
 
-- Feature 1
-- Feature 2
-- Feature 3
+### SSH (sshd)
 
-## Requirements
+`sshd` configuration template with security best practices.
 
-- Requirement 1
-- Requirement 2
+## Recommended usage
 
-## File Structure
-
-- Add key files/folders here
-- Example: [/src](src)
-- Example: [/docs](docs)
-
-## Usage
-
-Explain how to run or use the project.
-
-```bash
-# Example command
-your-command --help
-```
-
-## Configuration
-
-Describe configuration options, environment variables, or config files.
-
-## Environment Variables
-
-These variables can be defined in a `.env` file or directly in your configuration.
-
-| Variable   | Description  | Example         |
-| ---------- | ------------ | --------------- |
-| `VAR_NAME` | What it does | `example_value` |
-
-## Examples
-
-Provide sample configurations or common use cases.
-
-## Security
-
-Add any security considerations relevant to your project.
+1. Review files and adjust paths/aliases for your environment.
+2. Back up your current dotfiles.
 
 ## Contributing
 
-Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md).
+Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-## Security Reporting
+## Security
 
-Please report vulnerabilities by following [SECURITY.md](SECURITY.md).
+Report vulnerabilities in [SECURITY.md](SECURITY.md).
 
 ## License
 
